@@ -27,6 +27,3 @@ jQuery(window).load(function(){
     }); 
 });
 
-jQuery(function() {
-    jQuery('.navbar li:has(ul)').doubleTapToGo();
-});
