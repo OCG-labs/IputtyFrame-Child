@@ -6,9 +6,6 @@
 
 get_header(); ?>
 
-<p>Current design: <strong id="current">unknown</strong></p>
-
-
 	<?php 
 	if (have_posts()) : while (have_posts()) : the_post(); ?>
 	
