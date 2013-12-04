@@ -16,7 +16,7 @@ if(!is_admin()){
 }
 
 function remove_parent_actions() {
-	//remove_action('navbar_bottom', 'navbar_searchbar', 5);
-	
+     //remove_action('navbar_top', 'navbar_project_blog_name', 1);
+     //remove_action('navbar_bottom', 'navbar_searchbar', 5);
 }
 add_action( 'init', 'remove_parent_actions' );
