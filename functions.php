@@ -14,3 +14,9 @@ if(!is_admin()){
      }
      add_action('init', 'load_user_js');
 }
+
+function remove_parent_actions() {
+	//remove_action('navbar_bottom', 'navbar_searchbar', 5);
+	
+}
+add_action( 'init', 'remove_parent_actions' );

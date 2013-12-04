@@ -28,9 +28,6 @@
     <?php wp_head(); ?>
     <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri(); ?>" />
 
-
-    </script>
-
   </head>
 
   <body <?php body_class(); ?>>
@@ -38,30 +35,7 @@
   	<!--[if lt IE 7]>
   	    <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
   	<![endif]-->
-  <nav class="navbar navbar-default" role="navigation">
-       
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-          
-            </div>
 
-
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
-              <?php
-               wp_nav_menu( array(
-                    'menu'       => 'main',
-                    'theme_location' => 'main',
-                    'depth'      => 2,
-                    'container'  => false,
-                    'menu_class' => 'nav navbar-nav',
-                    'fallback_cb' => 'wp_page_menu',
-                    'walker' => new wp_bootstrap_navwalker())
-                );      
-              ?>    
-            </div>
-          </nav> 
+  <header> 
+    <?php bootstrap_main_navigation(); ?>
+  </header>
