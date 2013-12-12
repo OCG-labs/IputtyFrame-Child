@@ -9,8 +9,8 @@
 get_header(); ?>
 
 <?php 
-$type = 'rentals';
-$tax  = 'types';
+$type = 'rentals'; //post type to loop 
+$tax  = 'types'; // taxonomy to create filters
 
 $terms = get_terms($tax); ?>
 <?php
@@ -27,7 +27,7 @@ $terms = get_terms($tax); ?>
 <section id="main_content">
   <div class="container">
 
-<!-- Filter Sections --> 
+<!-- BEGIN: Filter Sections --> 
     <div class="row rw isotope-filtera-row">
       <div class="clientsfilter col-md-12">
         <ul class="list-inline gallery-buttons">
@@ -40,6 +40,7 @@ $terms = get_terms($tax); ?>
     </div>
 <!-- END: Filter Sections -->
 
+<!-- BEGIN: Loop section -->
     <div id="posts" class="row rw">
 <?php $i = '1'; ?>
 <?php while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
@@ -59,6 +60,7 @@ $terms = get_terms($tax); ?>
 <?php endwhile; ?>
     
     </div>
+<!-- END: Loop section -->    
   </div>
 </section>
 
