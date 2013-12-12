@@ -8,122 +8,59 @@
 
 get_header(); ?>
 
-<div class="container">
-  <div class="row rw">
-    <div class="clientsfilter col-md-12">
-      <a href="#" title="View All Categories" data-filter="*" class="current">all</a>
-      <a href="#" data-filter=".test">test</a>
+<?php 
+$type = 'rentals';
+$tax  = 'types';
+
+$terms = get_terms($tax); ?>
+<?php
+    global $wp_query;
+    $temp = $wp_query;
+    $wp_query= null;
+    $mypost = array(
+          'post_type' => $type, 
+          'posts_per_page' => '-1'
+            );
+    $wp_query = new WP_Query( $mypost );
+?>
+
+<section id="main_content">
+  <div class="container">
+
+<!-- Filter Sections --> 
+    <div class="row rw isotope-filtera-row">
+      <div class="clientsfilter col-md-12">
+        <ul class="list-inline gallery-buttons">
+            <li><a href="#" title="View All Categories" data-filter="*" class="btn btn-danger" style="margin: 5px;">All</a></li>
+            <?php foreach($terms as $term) {
+            echo '<li><a href="#" class="btn btn-default" style="margin: 5px;" data-filter=".'.$term->slug.'">'.$term->name.'</a></li>';
+            } ?>
+        </ul>
+      </div>
+    </div>
+<!-- END: Filter Sections -->
+
+    <div id="posts" class="row rw">
+<?php $i = '1'; ?>
+<?php while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
+<?php $url = wp_get_attachment_url( get_post_thumbnail_id() ); ?>
+<?php $post_terms = wp_get_object_terms(get_the_ID(), $tax ); ?>
+
+      <div id="<?php echo $i; ?>" class="post item col-md-3 col-sm-6 col-xs-12 text-center<?php foreach( $post_terms as $post_term ){ echo ' ' . $post_term->slug; } ?>">
+        <div class="well">
+
+          <img class="thumbnail img-responsive img-center" src="<?php echo $url; ?>" />
+          <h4><a href="#" target="_blank"><?php the_title(); ?></a></h4>
+          
+        </div>
+      </div>
+
+<?php $i++; ?>
+<?php endwhile; ?>
+    
     </div>
   </div>
-    <div id="posts" class="row rw">
-        <div id="1" class="post item col-md-3 col-sm-6 col-xs-12 text-center test">
-            <div class="well">
-                 <h4>
-          <a href="#" target="_blank">Bootstrap</a>
-        </h4>
-
-                <img class="thumbnail img-responsive img-center" src="//lorempixel.com/150/180">
-                <div class="info"> <span class="badge">100</span>
- <span class="badge">45</span>
-
-                </div>
-            </div>
-        </div>
-        <div id="2" class="post item col-md-3 col-sm-6 col-xs-12 text-center">
-            <div class="well">
-                 <h4>
-          <a href="#" target="_blank">Isotope</a>
-        </h4>
-
-                <img class="thumbnail img-responsive img-center" src="//lorempixel.com/150/120/nature">
-                <div class="info"> <span class="badge">100</span>
- <span class="badge">45</span>
-
-                </div>
-            </div>
-        </div>
-        <div id="3" class="post item col-md-3 col-sm-6 col-xs-12 text-center">
-            <div class="well">
-                 <h4>
-          <a href="#" target="_blank">Layout</a>
-        </h4>
-
-                <img class="thumbnail img-responsive img-center" src="//lorempixel.com/150/150/people/1">
-                <div class="info"> <span class="badge">100</span>
- <span class="badge">45</span>
-
-                </div>
-            </div>
-        </div>
-        <div id="4" class="post item col-md-3 col-sm-6 col-xs-12 text-center">
-            <div class="well">
-                  <h4>
-          <a href="#" target="_blank">Bootstrap</a>
-        </h4>
-
-                <img class="thumbnail img-responsive img-center" src="//lorempixel.com/150/180">
-                <div class="info"> <span class="badge">100</span>
- <span class="badge">45</span>
-
-
-                </div>
-            </div>
-        </div>
-        <div id="5" class="post item col-md-3 col-sm-6 col-xs-12 text-center">
-            <div class="well">
-                 <h4>
-          <a href="#" target="_blank">Sleek</a>
-        </h4>
-
-                <img class="thumbnail img-responsive img-center" src="//lorempixel.com/150/120/transport/1">
-                <div class="info"> <span class="badge">100</span>
- <span class="badge">45</span>
-
-                </div>
-            </div>
-        </div>
-        <div id="6" class="post item col-md-3 col-sm-6 col-xs-12 text-center">
-            <div class="well">
-                 <h4>
-          <a href="#" target="_blank">Mobilicious</a>
-        </h4>
-
-                <img class="thumbnail img-responsive img-center" src="//lorempixel.com/150/120/sports">
-                <div class="info"> <span class="badge">100</span>
- <span class="badge">45</span>
-
-                </div>
-            </div>
-        </div>
-        <div id="7" class="post item col-md-3 col-sm-6 col-xs-12 text-center test">
-            <div class="well">
-                 <h4>
-          <a href="#" target="_blank">Geekness</a>
-        </h4>
-
-                <img class="thumbnail img-responsive img-center" src="//lorempixel.com/150/120/business/1">
-                <div class="info"> <span class="badge">100</span>
- <span class="badge">45</span>
-
-                </div>
-            </div>
-        </div>
-        <div id="8" class="post item col-md-3 col-sm-6 col-xs-12 text-center">
-            <div class="well">
-                 <h4>
-          <a href="#" target="_blank">Sneaky Kitten</a>
-        </h4>
-
-                <img class="thumbnail img-responsive img-center" src="//placekitten.com/150/120"
-                title="Can you believe it??">
-                <div class="info"> <span class="badge">120</span>
- <span class="badge">46</span>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+</section>
 
 <?php 
 get_footer(); ?>
