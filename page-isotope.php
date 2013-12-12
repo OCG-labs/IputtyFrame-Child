@@ -9,8 +9,8 @@
 get_header(); ?>
 
 <?php 
-$type = 'rentals'; //post type to loop 
-$tax  = 'types'; // taxonomy to create filters
+$type = 'POST_TYPE'; //post type to loop 
+$tax  = 'TAXONOMY'; // taxonomy to create filters
 
 $terms = get_terms($tax); ?>
 <?php
