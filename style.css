@@ -34,6 +34,38 @@ M A I N  N A V I G A T I O N
 */
 
 
+/*
+=================================================
+B L O G 
+=================================================
+*/
+
+.boxed_post {
+  background: rgba(255,255,255,.4);
+  border: 2px solid #DEDEDE;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 15px 0;
+}
+
+.boxed_post .well {
+  padding: 10px 10px 0 10px;
+}
+
+.boxed_post h3 {
+  margin: 8px 0 0 0;
+  font-family: 'Oleo Script', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+a.post_link {
+  color: #EF4323;
+}
+
+.postmetadata {
+  margin: 10px 0;
+}
 
 /*
 =================================================
@@ -42,28 +74,28 @@ I S O T O P E
 */
 
 /* make the well swell */
-.well {
+#isotope .well {
   border-color:#c9c9c9;
 }
 
 
-.post h4 {
+#isotope .post h4 {
   margin-bottom: 9px;
 }
 
-.post h4 a {
+#isotope .post h4 a {
   color: #333;
 }
 
-.post img.image {
+#isotope .post img.image {
   max-width: 100%;
   margin-top: 9px;
 }
 
-.info {
+#isotope .info {
   padding:4px;
 }
-.img-center {
+#isotope .img-center {
   margin:0 auto;
 }
 /* Isotope Transitions
