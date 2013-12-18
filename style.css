@@ -155,19 +155,19 @@ I S O T O P E
 
 
 @media (min-width: 768px) and (max-width: 980px) {
-  .col-sm-6 {
+  #isotope .col-sm-6 {
     width: 300px;
   }
 }
 
 @media (min-width: 980px) and (max-width: 1200px) {
- .col-md-6 {
+ #isotope .col-md-6 {
     width: 300px;
   }
 }
 
 @media (min-width: 1200px) {
-  .col-lg-6 {
+  #isotope .col-lg-6 {
     width: 270px;
   }
 }
