@@ -67,6 +67,28 @@ a.post_link {
   margin: 10px 0;
 }
 
+/* 
+=================================================
+S I D E B A R
+=================================================
+*/
+
+#sidebar {
+  margin-top: 10px;
+}
+
+.st_sidebar {
+  background: rgba(255,255,255,.4);
+  border: 2px solid #DEDEDE;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 15px 0;
+}
+
+.st_sidebar_title {
+  margin: 0 0 10px 0;
+}
+
 /*
 =================================================
 I S O T O P E
